@@ -15,4 +15,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
+current_page=1
+FILE_NAME_0=385;Ruby;0;16;1;1;0;/home/saasbook/saas/hw/hw2_rottenpotatoes/app/controllers/movies_controller.rb;0;4
+FILE_NAME_1=227;None;0;16;1;1;0;/home/saasbook/saas/hw/hw2_rottenpotatoes/app/views/movies/index.html.haml;0;4
+FILE_NAME_2=0;None;0;16;1;1;0;/home/saasbook/saas/hw/hw2_rottenpotatoes/app/views/movies/show.html.haml;0;4
