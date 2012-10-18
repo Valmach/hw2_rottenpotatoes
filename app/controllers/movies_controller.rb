@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
     else
       @ratings = {}
       @all_ratings.each do |rating|
-        @ratings[rating]="yes"
+        @ratings[rating]="1"
       end
       redirect = true
     end   
