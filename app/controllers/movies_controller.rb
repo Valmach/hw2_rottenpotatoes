@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   def initialize
     @all_ratings = Movie.all_ratings
     @ratings= @all_ratings;
-    @sort_by= :id;
+    @sort= :id;
     super
   end  
  
@@ -15,10 +15,10 @@ class MoviesController < ApplicationController
 
   def index
     redirect = false
-    if params["sort_by"]
-      @sort_by = params["sort_by"]
-    elsif session[:sort_by]
-      @sort_by = session[:sort_by]
+    if params["sort"]
+      @sort_by = params["sort"]
+    elsif session[:sort]
+      @sort_by = session[:sort]
       redirect = true
     else
       @sort_by = :id
@@ -39,10 +39,10 @@ class MoviesController < ApplicationController
     end   
     
      if redirect 
-      redirect_to movies_path(:sort_by=>@sort_by,:ratings=>@ratings)
+      redirect_to movies_path(:sort=>@sort_by,:ratings=>@ratings)
     end
 
-    all_movies = Movie.order(@sort_by)
+    all_movies = Movie.order(@sort)
 
     @movies = []
     
@@ -52,9 +52,9 @@ class MoviesController < ApplicationController
       end
     end
 
-    flash[:sort_by] = @sort_by
+    flash[:sort] = @sort_by
     flash[:ratings] = @ratings
-    session[:sort_by] = @sort_by
+    session[:sort] = @sort_by
     session[:ratings] = @ratings
 
   end
