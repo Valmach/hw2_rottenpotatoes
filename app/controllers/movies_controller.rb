@@ -42,7 +42,7 @@ class MoviesController < ApplicationController
       redirect_to movies_path(:sort=>@sort,:ratings=>@ratings)
     end
 
-    all_movies = Movie.order(@sort)
+    all_movies = Movie.order(@sort) #Get all movie from database, who match @sort, also you can use @sort + ASC(for ABC) or DESC(for ZYX)
 
     @movies = []
     
